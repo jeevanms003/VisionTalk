@@ -1,0 +1,193 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Home Container */
+.home-container {
+  max-width: 1000px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.home-container h1 {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+/* Upload Container */
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.upload-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a90e2;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.upload-label:hover {
+  border-color: #4a90e2;
+  background: rgba(255, 255, 255, 1);
+}
+
+.upload-label svg {
+  width: 24px;
+  height: 24px;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 12px;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+/* Description Box */
+.desc-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: justify; /* Justify AI-generated description */
+  font-size: 1rem;
+  color: #2d3748;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.desc-box.loading {
+  text-align: center; /* Center "Thinking..." message */
+  color: #718096;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* TTS Controls */
+.tts-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.tts-controls button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.tts-controls button:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.tts-controls button:hover:not(:disabled) {
+  background: #357abd;
+  transform: translateY(-2px);
+}
+
+.tts-controls svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* New Upload Button */
+.new-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: #38a169;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 16px;
+}
+
+.new-upload-btn:hover {
+  background: #2f855a;
+  transform: translateY(-2px);
+}
+
+.new-upload-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 16px;
+  }
+
+  .home-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .tts-controls {
+    flex-direction: column;
+  }
+
+  .tts-controls button,
+  .new-upload-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .image-preview {
+    max-height: 200px;
+  }
+}
