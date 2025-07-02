@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyCrTnWKYPy1EHfTUvbrHXaOn28OZQnahxw");
+const genAI = new GoogleGenerativeAI("apikey");
 
 export async function getImageDescription(base64Image) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
